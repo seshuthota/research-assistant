@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]  # Web server for FastAPI
+requests
+beautifulsoup4
+arxiv
+langchain
+langchain-google-genai
+langchain-openai
+langchain-community
+duckduckgo-search

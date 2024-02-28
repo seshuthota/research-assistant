@@ -72,7 +72,7 @@ def scrape_text(url: str):
 scrape_and_summarize_chain = RunnablePassthrough.assign(
     summary=RunnablePassthrough.assign(
         text=lambda x: scrape_text(x["url"])[:10000]
-    ) | SUMMARY_PROMPT | ChatOpenAI(model="gpt-3.5-turbo-1106") | StrOutputParser()
+    ) | SUMMARY_PROMPT | llm | StrOutputParser()
 ) | (lambda x: f"URL: {x['url']}\n\nSUMMARY: {x['summary']}")
 
 web_search_chain = RunnablePassthrough.assign(

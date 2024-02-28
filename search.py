@@ -12,19 +12,19 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_openai import ChatOpenAI
 from langserve.server import add_routes
+from dotenv import load_dotenv
 
-from keys import GOOGLE_API_KEY, TAVILY_API_KEY, LS_API_KEY
+load_dotenv()
 
 client = arxiv.Client()
 
-os.environ["TAVILY_API_KEY"] = TAVILY_API_KEY
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
-os.environ["LANGCHAIN_API_KEY"] = LS_API_KEY
+os.environ["LANGCHAIN_API_KEY"] = os.getenv("LS_API_KEY")
 os.environ["LANGCHAIN_PROJECT"] = "research-assistant"
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-pro",
-    google_api_key=GOOGLE_API_KEY,
+    google_api_key=os.getenv("GOOGLE_API_KEY"),
     convert_system_message_to_human=True,
 )
 

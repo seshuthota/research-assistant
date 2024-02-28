@@ -1,10 +1,15 @@
-fastapi
-uvicorn[standard]  # Web server for FastAPI
-requests
-beautifulsoup4
-arxiv
-langchain
+fastapi~=0.109.2
+uvicorn[standard]~=0.23.2
+requests~=2.31.0
+beautifulsoup4~=4.12.2
+arxiv~=2.1.0
+langchain~=0.1.9
 langchain-google-genai
 langchain-openai
 langchain-community
 duckduckgo-search
+langserve~=0.0.41
+python-dotenv~=1.0.1
+matplotlib~=3.8.0
+networkx~=3.2.1
+langgraph~=0.0.24

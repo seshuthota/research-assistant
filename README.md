@@ -1,5 +1,3 @@
-Absolutely! Let's craft a detailed `README.md` document for your research assistant code.
-
 **README.md**
 
 **Project Title: Research Assistant**
